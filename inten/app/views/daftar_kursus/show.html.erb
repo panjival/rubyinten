@@ -1,0 +1,5 @@
+<h1> Nama Murid      :  <%= Murid.find(@daftar_kursu.id_murid).nama %> </h1>
+<h4> Jenis Kursus    :  <%= JenisKursu.find(@daftar_kursu.id_jenis_kursus).jenis_kursus %></h4>
+<h4> Nama Instruktur :  <%= Instruktur.find(@daftar_kursu.id_instruktur).nama %></h4>
+<br>
+<%= link_to 'kembali', daftar_kursus_path, {class: 'btn btn-default'} %>

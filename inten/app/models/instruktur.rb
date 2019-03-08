@@ -1,0 +1,2 @@
+class Instruktur < ApplicationRecord
+end

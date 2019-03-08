@@ -1,0 +1,29 @@
+<h1> DAFTAR KURSUS </h1>
+<div class="pull-right">
+<%= link_to 'ADD DAFTAR', new_daftar_kursu_path, class:'btn btn-primary' %>
+</div>
+<div class="container">
+<table class="table">
+<thead class="thead-dark">
+  <tr>
+	<th scope="col">NO</th>
+	<th scope="col">NAMA MURID</th>
+    <th scope="col">JENIS KURSUS</th>
+    <th scope="col">NAMA INSTRUKTUR</th>
+  </tr>
+</thead>
+<tbody>
+	<% @daftar_kursus.each_with_index do |f,index| %>
+  <tr>
+	<th scope="row"><%= index +1 %></th>
+	<td><%= Murid.find(f.id_murid).nama %></td>
+  <td><%= JenisKursu.find(f.id_jenis_kursus).jenis_kursus %></td>
+  <td><%= Instruktur.find(f.id_instruktur).nama %></td>
+	<td><%= link_to 'show', f, class:'btn btn-info'%></td>
+	<td><%= link_to 'edit', edit_daftar_kursu_path(f), class:'btn btn-warning' %></td>
+	<td><%= link_to 'delete', f, method: :delete, class:'btn btn-danger' %></td> 
+	</tr>
+  <% end %>
+  </tbody>
+  </table>
+  </div>

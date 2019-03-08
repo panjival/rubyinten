@@ -1,0 +1,29 @@
+<h1> DAFTAR MURID KURSUS </h1>
+<div class="pull-right">
+<%= link_to 'ADD KURSUS', new_jenis_kursu_path, class:'btn btn-primary' %>
+</div>
+<div class="container">
+<table class="table">
+<thead class="thead-dark">
+  <tr>
+	<th scope="col">NO</th>
+	<th scope="col">JENIS KURSUS</th>
+  <th scope="col">LAMA BELAJAR</th>
+	<th scope="col">TARIF</th>    
+  </tr>
+</thead>
+<tbody>
+	<% @jenis_kursus.each_with_index do |f,index| %>
+  <tr>
+	<th scope="row"><%= index +1 %></th>
+	<td><%= f.jenis_kursus %></td>
+	<td><%= f.lama_belajar==1 ? '1 Bulan' ==2 '2 Bulan' : '3 Bulan' : '4 Bulan' : '5 Bulan' : '6 Bulan' : '7 Bulan' : '8 Bulan' : '9 Bulan' : '10 Bulan' : '11 Bulan' : '12 Bulan' %></td>
+	<td><%= f.tarif %></td>    
+	<td><%= link_to 'show', f, class:'btn btn-info'%></td>
+	<td><%= link_to 'edit', edit_jenis_kursu_path(f), class:'btn btn-warning' %></td>
+	<td><%= link_to 'delete', f , method: :delete, class:'btn btn-danger' %></td> 
+	</tr>
+  <% end %>
+  </tbody>
+	</table>
+	</div>

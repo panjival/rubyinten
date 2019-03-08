@@ -1,0 +1,5 @@
+<% @murid.each do |f| %>
+    <%= link_to f.nama, show_path(murid) %>
+  <% end %>
+  
+  <%= link_to 'tambah', muridnew_path, class: 'btn btn-primary', role: 'button' %>
